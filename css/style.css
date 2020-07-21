@@ -500,6 +500,10 @@ body {
     cursor: pointer;
 }
 
+.working-process-slider {
+    position: relative;
+}
+
 .working-swiper-container {
     overflow: hidden;
     padding: 20px 0;
@@ -515,7 +519,7 @@ body {
     background: transparent;
     cursor: pointer;
     position: absolute;
-    padding-top: 14%;
+    top: 50%;
     z-index: 3;
 }
 
@@ -591,6 +595,66 @@ body {
     color: #fff;
     font-size: 18px;
     text-decoration: none;
+}
+
+
+
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+
+.popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup.open .popup-content {
+    transform: perspective(600px) translate(0px, 0%), rotateX(0deg);
+    opacity: 1;
+}
+
+.popup-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    min-width: 500px;
+    padding: 30px 20px;
+}
+
+.popup-close {
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-title {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 @keyframes animborder {

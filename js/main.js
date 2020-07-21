@@ -1,6 +1,25 @@
 
 
 $(document).ready(function () {
+    //PopUp
+    const body = document.querySelector('body');
+    let unlock = true;
+    const timeout = 800; 
+    const popupOffer = document.querySelector('#popup-offer');
+    const popupClose = document.querySelector('.popup-close');
+
+    window.onload = () => {
+        setTimeout(() => {
+            popupOffer.classList.add('open');
+        } , 5000);
+    }
+
+    popupClose.addEventListener("click", () => {
+        popupOffer.classList.remove('open')
+    });
+
+
+
     // Mobile Menu
     const mMenuBtn = $(".m-menu-button");
     const mMenu = $(".m-menu");
@@ -24,7 +43,7 @@ $(document).ready(function () {
 
     
 
-//swiper
+    //swiper
 
     const mainSwiper = document.querySelector('.swiper-container');
     const workingProcessSwiper = document.querySelector('.working-swiper-container');
@@ -105,11 +124,13 @@ $(document).ready(function () {
             }
         });
     });
+
     swiperPaginationBullets.forEach(element => {
         observer.observe(element, {
             attributes: true,
         })
     });
+
     
 });
 
